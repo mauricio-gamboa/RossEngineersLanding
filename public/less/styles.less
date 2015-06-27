@@ -1,0 +1,357 @@
+/***************************
+****************************
+Variables
+****************************
+***************************/
+
+@main-color: white;
+
+@white-1: rgba(255, 255, 255, 0.5);
+
+@blue-1: #08294c;
+@blue-2: #0b3664;
+
+@gray-1: #d0d0d0;
+
+@large: ~"(min-width: 1200px)";
+@medium: ~"(min-width: 993px) and (max-width: 1200px)";
+@small: ~"(min-width: 768px) and (max-width: 992px)";
+@xs: ~"(max-width: 767px)";
+
+/***************************
+****************************
+Responsive Settings
+****************************
+***************************/
+
+.show-xs,
+.show-s,
+.show-m,
+.show-xl {
+  display: none;
+}
+
+@media @medium {
+  .hide-m {
+    display: none !important;
+  }
+
+  .show-m {
+    display: block;
+  }
+}
+
+@media @small {
+  .hide-s {
+    display: none !important;
+  }
+
+  .show-s {
+    display: block;
+  }
+}
+
+@media @xs {
+  .hide-xs {
+    display: none !important;
+  }
+
+  .show-xs {
+    display: block;
+  }
+}
+
+/***************************
+****************************
+Fonts
+****************************
+***************************/
+
+@font-face {
+  font-family: 'open_sanssemibold';
+  src: url('../fonts/opensans-semibold-webfont.eot');
+  src: url('../fonts/opensans-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/opensans-semibold-webfont.woff') format('woff'),
+  url('../fonts/opensans-semibold-webfont.ttf') format('truetype'),
+  url('../fonts/opensans-semibold-webfont.svg#open_sanssemibold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'open_sansregular';
+  src: url('../fonts/opensans-regular-webfont.eot');
+  src: url('../fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/opensans-regular-webfont.woff') format('woff'),
+  url('../fonts/opensans-regular-webfont.ttf') format('truetype'),
+  url('../fonts/opensans-regular-webfont.svg#open_sansregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'open_sanslight';
+  src: url('../fonts/opensans-light-webfont.eot');
+  src: url('../fonts/opensans-light-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/opensans-light-webfont.woff') format('woff'),
+  url('../fonts/opensans-light-webfont.ttf') format('truetype'),
+  url('../fonts/opensans-light-webfont.svg#open_sanslight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/***************************
+****************************
+Buttons Styles
+****************************
+***************************/
+
+.my-btn {
+  font-family: 'open_sanssemibold';
+  font-size: 14px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+
+  &.btn-1 {
+    background-color: @blue-1;
+    color: @main-color;
+
+    &:hover {
+      background-color: @blue-2;
+    }
+  }
+}
+
+/***************************
+****************************
+General Styles
+****************************
+***************************/
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  background: url("../images/g-1.png") repeat-x 0 0, url("../images/bg.jpg") repeat 0 0;
+  font-family: 'open_sansregular';
+  color: @main-color;
+}
+
+.logo {
+  margin: 0;
+  display: inline-block;
+
+  a {
+    background: url("../images/logo.png") no-repeat 0 0;
+    display: inline-block;
+    width: 175px;
+    height: 184px;
+    text-indent: -9999px;
+  }
+}
+
+/***************************
+****************************
+Sections Styles
+****************************
+***************************/
+
+#logo-wrapper {
+  margin-top: 60px;
+}
+
+#coming-soon {
+  background: url("../images/bg-coming-soon.png") no-repeat 50% 100%;
+  margin-top: 56px;
+  padding-bottom: 23px;
+
+  p {
+    font-size: 19px;
+    margin: 30px 0 0 0;
+  }
+
+  @media @xs {
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+#form {
+  margin: 33px auto 0;
+  width: 601px;
+  padding-bottom: 260px;
+
+  @media @xs {
+    width: 100%;
+    padding: 0 20px 260px 20px;
+  }
+
+  .contact {
+    margin-top: 44px;
+
+    @media @xs {
+      margin-top: 10px;
+    }
+  }
+}
+
+/***************************
+****************************
+Form Styles
+****************************
+***************************/
+
+.form {
+  background: rgba(0, 0, 0, 0) url("../images/bg-form.png") repeat-x scroll center 0;
+  border: 1px solid @main-color;
+  border-top: none;
+  padding: 30px 0;
+
+  @media @xs {
+    background: none;
+    padding: 20px;
+    border-top: 1px solid @main-color;
+  }
+
+  > p {
+    font-size: 16px;
+    margin: 0;
+    position: relative;
+    top: -42px;
+
+    @media @xs {
+      position: static;
+      margin-bottom: 15px;
+    }
+  }
+
+  form {
+    input[type="text"],
+    input[type="email"] {
+      height: 50px;
+      width: 350px;
+      font-size: 15px;
+      font-family: 'open_sanssemibold';
+      padding-left: 48px;
+
+      @media @xs {
+        width: 100%;
+      }
+    }
+
+    button {
+      height: 50px;
+      width: 143px;
+
+      @media @xs {
+        width: 100%;
+      }
+    }
+
+    .email-wrapper {
+      position: relative;
+      > i {
+        position: absolute;
+        left: 16px;
+        top: 14px;
+        color: @gray-1;
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+/***************************
+****************************
+Contact Styles
+****************************
+***************************/
+
+.contact {
+  margin: 0;
+
+  li {
+    height: 36px;
+    line-height: 36px;
+    border-right: 1px solid @main-color;
+    padding: 0 20px;
+    font-size: 15px;
+
+    @media @xs {
+      width: 100%;
+      border: none;
+      text-align: left;
+      padding: 0;
+    }
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      border-right: 0;
+      padding-right: 0;
+    }
+
+    i {
+      font-size: 25px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+  }
+}
+
+/***************************
+****************************
+Contact Styles
+****************************
+***************************/
+
+#footer {
+  background: url("../images/bg-footer.png") repeat-x center 0;
+  height: 128px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  .social {
+    li {
+      position: relative;
+      top: -20px;
+    }
+  }
+
+  p {
+    color: @white-1;
+  }
+}
+
+.social {
+  li {
+    a {
+      background-color: @white-1;
+      display: inline-block;
+      height: 41px;
+      line-height: 41px;
+      text-align: center;
+      border-radius: 100%;
+      width: 41px;
+      font-size: 22px;
+
+      &:hover {
+        background-color: @main-color;
+      }
+    }
+  }
+}
