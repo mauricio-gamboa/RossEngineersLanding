@@ -27,14 +27,35 @@
     <div class="form">
       <p>Join our mailing list and we'll keep you updated</p>
 
-      <form class="form-inline">
+      <form class="form-inline"
+            action="//ross-engineers.us11.list-manage.com/subscribe/post?u=8636c4f4012b5c6e5c276d5e2&amp;id=08ab455642"
+            method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+            target="_blank" novalidate>
         <div class="form-group email-wrapper">
-          <label class="sr-only">Your e-mail</label>
+          <label class="sr-only" for="mce-EMAIL">Your e-mail</label>
           <i class="fa fa-envelope"></i>
-          <input type="email" class="form-control" placeholder="Your e-mail">
+          <input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL"
+                 placeholder="Your e-mail">
         </div>
-        <button type="submit" class="my-btn btn-1">Stay tuned</button>
+        <button type="submit" class="my-btn btn-1" name="subscribe" id="mc-embedded-subscribe">Stay tuned</button>
+        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+        <div style="position: absolute; left: -5000px;">
+          <input type="text" name="b_8636c4f4012b5c6e5c276d5e2_08ab455642" tabindex="-1" value="">
+        </div>
       </form>
+
+      <div class="result">
+        <div class="alert alert-success" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+          <strong>Success!</strong> <span class="message"></span>
+        </div>
+        <div class="alert alert-danger" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+          <strong>Error!</strong> <span class="message"></span>
+        </div>
+      </div>
     </div>
     <ul class="list-inline contact">
       <li><i class="fa fa-phone"></i> 267.573.9119</li>
@@ -45,9 +66,10 @@
 
   <footer id="footer" class="text-center">
     <ul class="list-inline social">
-      <li><a href=""><i class="fa fa-facebook"></i></a></li>
-      <li><a href=""><i class="fa fa-twitter"></i></a></li>
-      <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+      <li><a href="https://www.facebook.com/pages/JP-Ross-Engineers/230119000344665?fref=ts" target="_blank"><i
+        class="fa fa-facebook"></i></a></li>
+      <li><a href="https://twitter.com/JPRossEngineer" target="_blank"><i class="fa fa-twitter"></i></a></li>
+      <!--<li><a href=""><i class="fa fa-pinterest"></i></a></li>-->
     </ul>
     <p class="hide-xs">&copy;2015. J.P. Ross Engineers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Made
       in
@@ -59,5 +81,31 @@
   </footer>
 </div>
 <script src="public/js/min/libs.min.js"></script>
+<script>
+  (function (w, d, $) {
+    'use strict';
+
+    $('.result .alert-success, .result .alert-danger').hide();
+
+    $('#mce-EMAIL').val('');
+
+    $('#mc-embedded-subscribe-form').ajaxChimp({
+      callback: callbackFunction
+    });
+
+    function callbackFunction(resp) {
+      if (resp.result === 'success') {
+        $('.result .alert-success').show();
+        $('.result .alert-danger').hide();
+        $('.result .alert-success .message').html(resp.msg);
+        $('#mce-EMAIL').val('');
+      } else {
+        $('.result .alert-success').hide();
+        $('.result .alert-danger').show();
+        $('.result .alert-danger .message').html(resp.msg);
+      }
+    }
+  })(window, document, window.jQuery);
+</script>
 </body>
 </html>
