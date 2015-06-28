@@ -218,6 +218,14 @@ Form Styles
   color: #d0d0d0;
   font-size: 22px;
 }
+.form .result {
+  margin-top: 20px;
+  padding: 0 50px;
+}
+.form .result .alert {
+  margin: 0;
+  text-align: left;
+}
 /***************************
 ****************************
 Contact Styles
