@@ -241,6 +241,9 @@ Contact Styles
   padding: 0 20px;
   font-size: 15px;
 }
+.contact li a {
+  color: white;
+}
 @media (max-width: 767px) {
   .contact li {
     width: 100%;
